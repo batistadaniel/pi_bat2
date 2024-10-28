@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: flex;
+        }
+        .opcoes {
+            display: flex;
+            flex-direction: column;
+        }
+        .hidden {
+            display: none;
+        }
+        /* .js{
+            display: flex;
+        }
+        .js.abrir{
+            display: none;
+        } */
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="opcoes">
+            <button id="button1" class="botao" onclick="mostraConteudo()">Botao 1</button>
+            <button id="button2" class="botao" onclick="mostraConteudo()">Botao 2</button>
+            <button id="button3" class="botao" onclick="mostraConteudo()">Botao 3</button>
+        </nav>
+
+        <div id="js">
+            <p id="conteudo1" class="hidden conteudo">Conteudo 1</p>
+            <p id="conteudo2" class="hidden conteudo">Conteudo 2</p>
+            <p id="conteudo3" class="hidden conteudo">Conteudo 3</p>
+        </div>
+    </div>
+
+
+    <!-- <script defer>
+        function mostraConteudo(id){
+            document.querySelectorAll('.conteudo').forEach(function(p) { // se passar a classe do botao ele oculta 
+                p.classList.add('hidden');
+            });
+
+            // document.getElementsByClassName('botao').forEach(function(p) {
+            //     p.classList.add('hidden');
+            // });
+
+            // Exibir o menu clicado
+            // if (id) {
+            //     document.getElementById(id).classList.remove('hidden');
+            // }
+            // id.classList.remove('hidden');
+            document.getElementById(id).classList.remove('hidden');
+
+        }
+    </script> -->
+
+    <script defer>
+        function mostraConteudo(){
+            const conf = document.getElementById('js');
+            conf.classList.add('hidden')
+
+            conf.addEventListener('click', (e) => {
+                if(e.target.id === 'conteudo1' || e.target.id === 'conteudo2' || e.target.id === 'conteudo3'){
+                    conf.classList.remove('hidden')
+                }
+            })
+        }
+
+    </script>
+</body>
+</html>
